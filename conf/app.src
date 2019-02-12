@@ -1,7 +1,7 @@
-SOURCE_URL=https://dl.phpboost.com/5.2/phpboost/phpboost.zip
-SOURCE_SUM=605e451961a5abb0c4b0338faa5df8f332c6fe4d479f4e7cbf18e021f3d67456cad76906ea248b4ebc1e8b77b3361852904dee7d1aaddc9bdc83ac4edba745d7
+SOURCE_URL=https://freefr.dl.sourceforge.net/project/mantisbt/mantis-stable/2.19.0/mantisbt-2.19.0.tar.gz
+SOURCE_SUM=5d074bc3605a9aae3c4b738e0ea667c3687e97a04e2702941158301ab9c86c14e8bc83fe8d5b9d34d5d011f5b5041d37b1bd44ea40815c2d1ae91f6130b5a987
 SOURCE_SUM_PRG=sha512sum
-SOURCE_FORMAT=zip
+SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
 SOURCE_EXTRACT=true
-SOURCE_FILENAME=phpboost.zip
+SOURCE_FILENAME=mantisbt.tar.gz
