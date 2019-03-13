@@ -1,6 +1,8 @@
 # Mantis app for YunoHost
 Mantis Server
 
+**Shipped version:** 2.19.0
+
 - [Yunohost project](https://yunohost.org)
 - [Mantis website](https://www.mantisbt.org/)
 
