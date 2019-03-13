@@ -1,8 +1,6 @@
 # Mantis app for YunoHost
 Mantis Server
 
-NOT WORK IS IN DEV
-
 - [Yunohost project](https://yunohost.org)
 - [Mantis website](https://www.mantisbt.org/)
 
@@ -16,6 +14,14 @@ NOT WORK IS IN DEV
  1. App can be installed by YunoHost **admin web-interface** or by **running following command**:
 
          $ sudo yunohost app install https://github.com/YunoHost-Apps/mantis_ynh
+         
+         After install :
+ 
+        1. Login in mantis
+        2. put your sql user and password is in nano /var/www/mantis/config/config_inc.php.sample
+        3. Admin user for db is same user for sql same for password
+        4. First login is user: administrator pwd: root
+        5. sudo rm -r /var/www/mantis/admin
 
  
 ### Upgrade this package:
