@@ -91,9 +91,13 @@ ynh_system_user_create $app
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-#cp -a ../conf/onlyoffice-documentserver.conf /etc/onlyoffice/documentserver/nginx/onlyoffice-documentserver.conf
-#ynh_replace_string "__NEXTCLOUDDOMAIN__" "$nextcloud_domain" "/etc/loolwsd/loolwsd.xml"
-#ynh_replace_string "__PASSWORD__" "$password" "/etc/loolwsd/loolwsd.xml"
+
+#ynh_replace_string "random_key" "$random_key" "$final_path/.env"
+ynh_replace_string "yunouser"   "$db_name"    "$final_path/.env"
+ynh_replace_string "yunopass"   "$db_pwd"     "$final_path/.env"
+ynh_replace_string "yunobase"   "$db_name"    "$final_path/.env"
+ynh_replace_string "yunomail"   "$email"      "$final_path/.env"
+ynh_replace_string "yunodomain" "$domain" "$final_path/.env"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
