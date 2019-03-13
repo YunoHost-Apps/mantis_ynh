@@ -67,6 +67,24 @@ ynh_app_setting_set $app path $path_url
 ynh_app_setting_set $app is_public $is_public
 
 #=================================================
+# CREATE A MYSQL DATABASE
+#=================================================
+ynh_print_info "Creating a MySQL database..."
+
+### Use these lines if you need a database for the application.
+### `ynh_mysql_setup_db` will create a database, an associated user and a ramdom password.
+### The password will be stored as 'mysqlpwd' into the app settings,
+### and will be available as $db_pwd
+### If you're not using these lines:
+###		- Remove the section "BACKUP THE MYSQL DATABASE" in the backup script
+###		- Remove also the section "REMOVE THE MYSQL DATABASE" in the remove script
+###		- As well as the section "RESTORE THE MYSQL DATABASE" in the restore script
+
+db_name=$(ynh_sanitize_dbid $app)
+ynh_app_setting_set $app db_name $db_name
+ynh_mysql_setup_db $db_name $db_name
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -95,8 +113,8 @@ ynh_system_user_create $app
 ynh_replace_string "yunouser"   "$db_name"    "$final_path/config_inc.php.sample"
 ynh_replace_string "yunopass"   "$db_pwd"     "$final_path/config_inc.php.sample"
 ynh_replace_string "yunobase"   "$db_name"    "$final_path/config_inc.php.sample"
-ynh_replace_string "yunomail"   "$email"      "$final_path/config_inc.php.sample"
-ynh_replace_string "yunodomain" "$domain"     "$final_path/config_inc.php.sample"
+#ynh_replace_string "yunomail"   "$email"      "$final_path/config_inc.php.sample"
+#ynh_replace_string "yunodomain" "$domain"     "$final_path/config_inc.php.sample"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
