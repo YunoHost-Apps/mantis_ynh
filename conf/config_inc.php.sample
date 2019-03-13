@@ -36,9 +36,9 @@
 
 # --- Database Configuration ---
 $g_hostname      = 'localhost';
-$g_db_username   = 'mantisdbuser';
-$g_db_password   = '';
-$g_database_name = 'bugtracker';
+$g_db_username   = 'yunouser';
+$g_db_password   = 'yunopass';
+$g_database_name = 'yunobase';
 $g_db_type       = 'mysqli';
 
 # --- Security ---
