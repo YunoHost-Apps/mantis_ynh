@@ -21,7 +21,7 @@ Mantis Server
  
         1. Login in mantis
         2. put your sql user and password 
-        (you can find them via $ nano /var/www/mantis/config/config_inc.php.sample in cli mode)
+        (you can find them via "nano /var/www/mantis/config/config_inc.php.sample" in cli mode)
         3. Admin user for db is same user for sql same for password
         4. First login is user: administrator pwd: root
         5. sudo rm -r /var/www/mantis/admin
