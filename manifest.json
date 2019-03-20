@@ -8,7 +8,7 @@
     },
     "version": "2.19.0",
     "url": "https://www.mantisbt.org/",
-    "license": "free",
+    "license": "GPL-3.0",
     "maintainer": {
         "name": "liberodark",
         "email": "liberodark@gmail.com"
