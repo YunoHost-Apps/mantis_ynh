@@ -3,8 +3,8 @@
     "id": "mantis",
     "packaging_format": 1,
     "description": {
-        "en": "Mantis package for YunoHost.",
-        "fr": "Mantis pour YunoHost."
+        "en": "An issue tracker that provides a balance between simplicity and power",
+        "fr": "Un gestionnaire de ticket avec un équilibre entre simplicité et puissance"
     },
     "version": "2.19.0",
     "url": "https://www.mantisbt.org/",
