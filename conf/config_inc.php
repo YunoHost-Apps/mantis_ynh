@@ -36,13 +36,13 @@
 
 # --- Database Configuration ---
 $g_hostname      = 'localhost';
-$g_db_username   = 'yunouser';
-$g_db_password   = 'yunopass';
-$g_database_name = 'yunobase';
+$g_db_username   = '__DB_NAME__';
+$g_db_password   = '__DB_PWD__';
+$g_database_name = '__DB_NAME__';
 $g_db_type       = 'mysqli';
 
 # --- Security ---
-$g_crypto_master_salt = '';	#  Random string of at least 16 chars, unique to the installation
+$g_crypto_master_salt = '__RANDOM__';	# Random string of at least 16 chars, unique to the installation
 
 # --- Anonymous Access / Signup ---
 $g_allow_signup				= ON;
