@@ -28,8 +28,8 @@ Mantis Server
         (you can find them via `nano /var/www/mantis/config/config_inc.php.sample` in CLI mode)
         3. Admin user for db is same user for SQL same for password
         4. First login is
-        	- user: **administrator**
-        	- password: **root**
+        	- user: administrator
+        	- password: root
         5. `sudo rm -r /var/www/mantis/admin`
 
 ## Documentation
