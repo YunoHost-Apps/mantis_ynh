@@ -21,6 +21,7 @@ path_url=$(ynh_app_setting_get --app=$app --key=path)
 is_public=$(ynh_app_setting_get --app=$app --key=is_public)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 
 #=================================================
@@ -101,7 +102,7 @@ ynh_system_user_create --username=$app
 # MODIFY A CONFIG FILE
 #=================================================
 
-cp -a ../conf/config_inc.php $final_path/config/config_inc.php
+cp -a ../conf/config_inc.php.sample $final_path/config/config_inc.php
 
 ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
 ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
@@ -112,7 +113,7 @@ ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd"  --tar
 #=================================================
 
 # Set permissions to app files
-chown -R www-data:www-data $final_path
+chown -R $app: $final_path
 chmod -R 755 $final_path
 
 #=================================================
