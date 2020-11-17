@@ -55,7 +55,6 @@ db_name=$(ynh_sanitize_dbid --db_name=$app)
 db_user=$db_name
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
-db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #ynh_mysql_execute_as_root --sql="CREATE EXTENSION IF NOT EXISTS unaccent;" --database=$db_name
 #ynh_mysql_execute_as_root --sql="CREATE EXTENSION IF NOT EXISTS pg_trgm;" --database=$db_name
@@ -98,7 +97,7 @@ phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 # MODIFY A CONFIG FILE
 #=================================================
 
-cp -a ../conf/config_inc.php.sample $final_path/config/config_inc.php
+cp -a ../conf/config_inc.php $final_path/config/config_inc.php
 
 ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
 ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
@@ -117,7 +116,7 @@ ynh_store_file_checksum --file="$final_path/config/config_inc.php"
 #=================================================
 
 # Set permissions to app files
-chown -R $app: $final_path
+chown -R www-data:www-data $final_path
 chmod -R 755 $final_path
 
 #=================================================
