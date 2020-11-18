@@ -36,7 +36,7 @@
 
 # --- Database Configuration ---
 $g_hostname        = 'localhost';
-$g_db_username     = '__DB_NAME__';
+$g_db_username     = '__DB_USER__';
 $g_db_password     = '__DB_PWD__';
 $g_database_name   = '__DB_NAME__';
 $g_db_type         = 'mysqli';
@@ -55,9 +55,9 @@ $g_phpMailer_method		= PHPMAILER_METHOD_MAIL; # or PHPMAILER_METHOD_SMTP, PHPMAI
 $g_smtp_host			= 'localhost';			# used with PHPMAILER_METHOD_SMTP
 $g_smtp_username		= '';					# used with PHPMAILER_METHOD_SMTP
 $g_smtp_password		= '';					# used with PHPMAILER_METHOD_SMTP
-$g_webmaster_email      = 'webmaster@example.com';
-$g_from_email           = 'noreply@example.com';	# the "From: " field in emails
-$g_return_path_email    = 'admin@example.com';	# the return address for bounced mail
+$g_webmaster_email      = 'webmaster@__DOMAIN__';
+$g_from_email           = 'noreply@__DOMAIN__';	# the "From: " field in emails
+$g_return_path_email    = 'admin@__DOMAIN__';	# the return address for bounced mail
 # $g_from_name			= 'Mantis Bug Tracker';
 # $g_email_receive_own	= OFF;
 # $g_email_send_using_cronjob = OFF;
