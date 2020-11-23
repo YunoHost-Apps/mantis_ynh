@@ -32,7 +32,7 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 ## Documentation
 
  * Official documentation: https://mantisbt.org/documentation.php
- * YunoHost documentation: If specific documentation is needed, feel free to contribute.
+ * YunoHost documentation: https://yunohost.org/#/app_mantis
 
 ## YunoHost specific features
 
