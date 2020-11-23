@@ -130,7 +130,7 @@ ynh_systemd_action --service_name=nginx --action=reload
 ynh_script_progression --message="Finalizing installation..." --weight=10
 
 # Installation with curl
-installUrl="/admin/install.php"
+installUrl="/admin/install.php?submit"
 
 ynh_local_curl $installUrl "install=2" "db_type=mysqli" "hostname=localhost" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" "admin_username=" "admin_password=" "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table" "timezone=UTC"
 
