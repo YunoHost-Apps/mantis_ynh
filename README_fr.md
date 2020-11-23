@@ -23,11 +23,12 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 
 ## Guide d'installation
 
-1. Pointez votre navigateur sur `http://chemin/vers/ mantisbt/admin/install.php` pour commencer le processus d'installation de la base de données.
-2. Sélectionnez le type de base de données et entrez les informations d'identification pour accéder à la base de données (elles doivent être pré-remplies)
-3. Cliquez sur installer/mettre à niveau
-4. L'installation est terminée
-5. Supprimez le répertoire `admin/` du chemin d'installation de MantisBT. Les scripts de ce répertoire ne doivent pas être accessibles sur un site MantisBT en direct ou sur toute installation accessible via Internet. `sudo rm -r /var/www/mantis/ admin`
+1. Lorsque vous vous connectez à Mantis pour la première fois, vous pouvez utiliser les informations d'identification d'administrateur par défaut:
+- **Utilisateur :** administrator
+- **Mot de passe :** root
+2. Vous devez remplacer le mot de passe administrateur par défaut par le vôtre.
+3. Supprimez le répertoire `admin/` du chemin d'installation de MantisBT. Les scripts de ce répertoire ne doivent pas être accessibles sur un site MantisBT en direct ou sur toute installation accessible via Internet. `sudo rm -r /var/www/mantis/admin`
+
 
 ## Documentation
 
