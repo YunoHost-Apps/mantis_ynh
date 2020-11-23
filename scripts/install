@@ -121,18 +121,24 @@ chmod -R 755 $final_path
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
-# Set the app as temporarily public for curl call
+
+# Set the app as temporarily public for cURL call
 ynh_permission_update --permission "main" --add "visitors"
 
-# Reload Nginx
+# Reload NGINX
 ynh_systemd_action --service_name=nginx --action=reload
 
 ynh_script_progression --message="Finalizing installation..." --weight=10
 
-# Installation with curl
+# Installation with cURL
 installUrl="/admin/install.php?submit"
 
 ynh_local_curl $installUrl "install=2" "db_type=mysqli" "hostname=localhost" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" "admin_username=" "admin_password=" "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table" "timezone=UTC"
+
+# Remove the `admin/` directory from within the MantisBT installation path.
+# The scripts within this directory should not be accessible on a live MantisBT site
+# or on any installation that is accessible via the Internet.
+ynh_secure_remove "$final_path/admin"
 
 #=================================================
 # SETUP SSOWAT
