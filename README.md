@@ -23,12 +23,11 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 ## After installing guide
 
-	1. Point your browser to `http://path/to/mantisbt/admin/install.php` to begin the database installation process
-	2. Select the database type and enter the credentials to access the database (this should be pre-filled)
-	3. Click install/upgrade
-	4. Installation is complete
-	5. Remove the `admin/` directory from within the MantisBT installation path. The scripts within this directory should not be accessible on a live MantisBT site or on any installation that is accessible via the Internet.
-	`sudo rm -r /var/www/mantis/admin`
+1. Point your browser to `http://path/to/mantisbt/admin/install.php` to begin the database installation process
+2. Select the database type and enter the credentials to access the database (this should be pre-filled)
+3. Click install/upgrade
+4. Installation is complete
+5. Remove the `admin/` directory from within the MantisBT installation path. The scripts within this directory should not be accessible on a live MantisBT site or on any installation that is accessible via the Internet. `sudo rm -r /var/www/mantis/admin`
 
 ## Documentation
 
