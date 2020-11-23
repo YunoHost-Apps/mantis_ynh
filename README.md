@@ -9,7 +9,7 @@
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
-Mantis Server
+Mantis Bug Tracker is a free and open source, web-based bug tracking system. The most common use of MantisBT is to track software defects. However, MantisBT is often configured by users to serve as a more generic issue tracking system and project management tool.
 
 **Shipped version:** 2.24.3
 
@@ -22,15 +22,13 @@ Mantis Server
 * [Official demo](https://mantisbt.org/bugs/my_view_page.php)
 
 ## After installing guide
- 
-        1. Login to Mantis
-        2. put your SQL user and password 
-        (you can find them via `nano /var/www/mantis/config/config_inc.php.sample` in CLI mode)
-        3. Admin user for db is same user for SQL same for password
-        4. First login is
-        	- user: administrator
-        	- password: root
-        5. `sudo rm -r /var/www/mantis/admin`
+
+	1. Point your browser to `http://path/to/mantisbt/admin/install.php` to begin the database installation process
+	2. Select the database type and enter the credentials to access the database (this should be pre-filled)
+	3. Click install/upgrade
+	4. Installation is complete
+	5. Remove the `admin/` directory from within the MantisBT installation path. The scripts within this directory should not be accessible on a live MantisBT site or on any installation that is accessible via the Internet.
+	`sudo rm -r /var/www/mantis/admin`
 
 ## Documentation
 
@@ -41,8 +39,8 @@ Mantis Server
 
 #### Multi-user support
 
-* Are LDAP and HTTP auth supported?
-* Can the app be used by multiple users?
+* Are LDAP and HTTP auth supported ? **No**
+* Can the app be used by multiple users? **Yes**
 
 #### Supported architectures
 
