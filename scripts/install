@@ -119,14 +119,30 @@ chown -R www-data:www-data $final_path
 chmod -R 755 $final_path
 
 #=================================================
+# SETUP APPLICATION WITH CURL
+#=================================================
+# Set the app as temporarily public for curl call
+ynh_permission_update --permission "main" --add "visitors"
+
+# Reload Nginx
+ynh_systemd_action --service_name=nginx --action=reload
+
+ynh_script_progression --message="Finalizing installation..." --weight=10
+
+# Installation with curl
+installUrl="/admin/install.php"
+
+ynh_local_curl $installUrl "install=2" "db_type=mysqli" "hostname=localhost" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" "admin_username=" "admin_password=" "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table" "timezone=UTC"
+
+#=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring SSOwat..." --weight=1
 
 # Make app public if necessary or protect it
-if [ $is_public -eq 1 ]
+if [ $is_public -eq 0 ]
 then
-	ynh_permission_update --permission "main" --add "visitors"
+	ynh_permission_update --permission "main" --remove "visitors"
 fi
 
 #=================================================
