@@ -102,3 +102,5 @@ $g_use_ldap_realname = ON;
 $g_use_ldap_email = ON;
 $g_allow_blank_email = ON;
 #$g_ldap_simulation_file_path
+
+$g_default_new_account_access_level = __DEFAULT_ACCESS_LEVEL__;

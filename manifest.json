@@ -58,6 +58,16 @@
                     "en": "Choose an admin user",
                     "fr": "Choisissez l’administrateur"
                 }
+            },
+            {
+                "name": "default_access_level",
+                "type": "string",
+                "ask": {
+                    "en": "Choose the default access level",
+                    "fr": "Choisissez le niveau d'accès par défaut"
+                },
+                "choices": ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER", "ADMINISTRATOR"],
+                "default": "REPORTER"
             }
         ]
     }
