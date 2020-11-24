@@ -82,3 +82,16 @@ $g_return_path_email    = 'admin@__DOMAIN__';	# the return address for bounced m
 
 # --- Others ---
 # $g_default_home_page = 'my_view_page.php';	# Set to name of page to go to after login
+
+# --- LDAP ---
+$g_login_method = 'ldap';
+$g_ldap_server = 'ldap://127.0.0.1:389';	
+$g_ldap_root_dn = 'ou=users,dc=yunohost,dc=org';
+$g_ldap_organization = "(organizationname=*YunoHost)";
+#$g_ldap_bind_dn
+#$g_ldap_bind_passwd
+$g_ldap_uid_field = 'uid';
+$g_ldap_realname_field = 'cn';
+#$g_use_ldap_realname
+#$g_use_ldap_email
+#$g_ldap_simulation_file_path
