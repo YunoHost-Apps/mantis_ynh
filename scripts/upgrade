@@ -115,7 +115,7 @@ ynh_system_user_create --username=$app
 #=================================================
 
 # Set permissions to app files
-chown -R www-data:www-data $final_path
+chown -R $app: $final_path
 chmod -R 755 $final_path
 
 #=================================================
