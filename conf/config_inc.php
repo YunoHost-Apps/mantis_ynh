@@ -85,7 +85,7 @@ $g_return_path_email    = 'admin@__DOMAIN__';	# the return address for bounced m
 
 # --- LDAP ---
 $g_login_method = 'LDAP';
-$g_ldap_server = 'ldap://127.0.0.1:389';	
+$g_ldap_server = 'ldap://localhost:389/';	
 $g_ldap_root_dn = 'ou=users,dc=yunohost,dc=org';
 $g_ldap_organization = "(organizationname=*YunoHost)";
 #$g_ldap_protocol_version
