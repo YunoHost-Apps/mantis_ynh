@@ -50,6 +50,14 @@
                     "fr": "Est-ce un site public ?"
                 },
                 "default": true
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "ask": {
+                    "en": "Choose an admin user",
+                    "fr": "Choisissez l’administrateur"
+                }
             }
         ]
     }

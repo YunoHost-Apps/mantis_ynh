@@ -99,6 +99,6 @@ $g_ldap_bind_dn = 'uid=users,cn=mantis.main,dc=yunohost,dc=org';
 $g_ldap_uid_field = 'uid';
 $g_ldap_realname_field = 'cn';
 $g_use_ldap_realname = ON;
-$g_use_ldap_email = OFF;
+$g_use_ldap_email = ON;
 $g_allow_blank_email = ON;
 #$g_ldap_simulation_file_path
