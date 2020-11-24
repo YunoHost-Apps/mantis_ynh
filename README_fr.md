@@ -28,7 +28,6 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 - **Utilisateur :** administrator
 - **Mot de passe :** root
 2. Vous devez remplacer le mot de passe administrateur par défaut par le vôtre.
-3. Supprimez le répertoire `admin/` du chemin d'installation de MantisBT. Les scripts de ce répertoire ne doivent pas être accessibles sur un site MantisBT en direct ou sur toute installation accessible via Internet. `sudo rm -r /var/www/mantis/admin`
 
 #### Où trouver l'utilisateur SQL et le mot de passe de la base.
 

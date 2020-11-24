@@ -28,7 +28,6 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 - **User:** administrator
 - **Password:** root
 2. You must change the default administrator password to your own.
-3. Remove the `admin/` directory from within the MantisBT installation path. The scripts within this directory should not be accessible on a live MantisBT site or on any installation that is accessible via the Internet. `sudo rm -r /var/www/mantis/admin`
 
 #### Where to find SQL user and password
 
