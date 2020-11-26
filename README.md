@@ -22,13 +22,6 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 * [Official demo](https://mantisbt.org/bugs/my_view_page.php)
 
-## After installing guide
-
-1. When you login to Mantis for the first time, you can use the default administrator credentials:
-- **User:** administrator
-- **Password:** root
-2. You must change the default administrator password to your own.
-
 #### Where to find SQL user and password
 
 - **DB user:** mantis

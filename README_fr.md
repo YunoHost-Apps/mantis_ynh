@@ -22,13 +22,6 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 
 * [Démo officielle](https://mantisbt.org/bugs/my_view_page.php)
 
-## Guide d'installation
-
-1. Lorsque vous vous connectez à Mantis pour la première fois, vous pouvez utiliser les informations d'identification d'administrateur par défaut:
-- **Utilisateur :** administrator
-- **Mot de passe :** root
-2. Vous devez remplacer le mot de passe administrateur par défaut par le vôtre.
-
 #### Où trouver l'utilisateur SQL et le mot de passe de la base.
 
 - **Utilisateur de la base de données :** mantis
