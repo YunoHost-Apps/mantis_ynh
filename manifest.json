@@ -55,18 +55,18 @@
                 "name": "admin",
                 "type": "user",
                 "ask": {
-                    "en": "Choose an admin user",
-                    "fr": "Choisissez l’administrateur"
+                    "en": "Choose the Mantis administrator",
+                    "fr": "Choisissez l’administrateur de Mantis"
                 }
             },
             {
                 "name": "default_access_level",
                 "type": "string",
                 "ask": {
-                    "en": "Choose the default access level",
-                    "fr": "Choisissez le niveau d'accès par défaut"
+                    "en": "Choose the default access level for new users",
+                    "fr": "Choisissez le niveau d'accès par défaut pour les nouveaux utilisateurs"
                 },
-                "choices": ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER", "ADMINISTRATOR"],
+                "choices": ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER"],
                 "default": "REPORTER"
             }
         ]
