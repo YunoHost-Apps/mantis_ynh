@@ -35,14 +35,15 @@
 # detailed comments.
 
 # --- Database Configuration ---
-$g_hostname      = 'localhost';
-$g_db_username   = 'yunouser';
-$g_db_password   = 'yunopass';
-$g_database_name = 'yunobase';
-$g_db_type       = 'mysqli';
+$g_hostname        = 'localhost';
+$g_db_username     = '__DB_USER__';
+$g_db_password     = '__DB_PWD__';
+$g_database_name   = '__DB_NAME__';
+$g_db_type         = 'mysqli';
+$g_db_table_prefix = '__DB_NAME__';
 
 # --- Security ---
-$g_crypto_master_salt = '';	#  Random string of at least 16 chars, unique to the installation
+$g_crypto_master_salt = '__RANDOM__';	# Random string of at least 16 chars, unique to the installation
 
 # --- Anonymous Access / Signup ---
 $g_allow_signup				= ON;
@@ -54,9 +55,9 @@ $g_phpMailer_method		= PHPMAILER_METHOD_MAIL; # or PHPMAILER_METHOD_SMTP, PHPMAI
 $g_smtp_host			= 'localhost';			# used with PHPMAILER_METHOD_SMTP
 $g_smtp_username		= '';					# used with PHPMAILER_METHOD_SMTP
 $g_smtp_password		= '';					# used with PHPMAILER_METHOD_SMTP
-$g_webmaster_email      = 'webmaster@example.com';
-$g_from_email           = 'noreply@example.com';	# the "From: " field in emails
-$g_return_path_email    = 'admin@example.com';	# the return address for bounced mail
+$g_webmaster_email      = 'webmaster@__DOMAIN__';
+$g_from_email           = 'noreply@__DOMAIN__';	# the "From: " field in emails
+$g_return_path_email    = 'admin@__DOMAIN__';	# the return address for bounced mail
 # $g_from_name			= 'Mantis Bug Tracker';
 # $g_email_receive_own	= OFF;
 # $g_email_send_using_cronjob = OFF;
@@ -68,10 +69,10 @@ $g_return_path_email    = 'admin@example.com';	# the return address for bounced 
 # $g_max_file_size		= 5000000;	# in bytes
 # $g_preview_attachments_inline_max_size = 256 * 1024;
 # $g_allowed_files		= '';		# extensions comma separated, e.g. 'php,html,java,exe,pl'
-# $g_disallowed_files		= '';		# extensions comma separated
+# $g_disallowed_files	= '';		# extensions comma separated
 
 # --- Branding ---
-# $g_window_title			= 'MantisBT';
+# $g_window_title		= 'MantisBT';
 # $g_logo_image			= 'images/mantis_logo.png';
 # $g_favicon_image		= 'images/favicon.ico';
 
@@ -81,3 +82,25 @@ $g_return_path_email    = 'admin@example.com';	# the return address for bounced 
 
 # --- Others ---
 # $g_default_home_page = 'my_view_page.php';	# Set to name of page to go to after login
+
+# --- LDAP ---
+$g_login_method = LDAP;
+$g_reauthentication = ON;
+$g_reauthentication_expiry = 600;
+$g_ldap_server = 'ldap://localhost:389';	
+$g_ldap_root_dn = 'ou=users,dc=yunohost,dc=org';
+#filtre d'organisation LDAP
+$g_ldap_organization = '';
+$g_ldap_protocol_version = 3;
+#$g_ldap_network_timeout
+$g_ldap_follow_referrals = ON;
+$g_ldap_bind_dn = 'uid=users,cn=mantis.main,dc=yunohost,dc=org';
+#$g_ldap_bind_passwd
+$g_ldap_uid_field = 'uid';
+$g_ldap_realname_field = 'cn';
+$g_use_ldap_realname = ON;
+$g_use_ldap_email = ON;
+$g_allow_blank_email = ON;
+#$g_ldap_simulation_file_path
+
+$g_default_new_account_access_level = __DEFAULT_ACCESS_LEVEL__;

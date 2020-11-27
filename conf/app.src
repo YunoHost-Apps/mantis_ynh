@@ -1,7 +1,7 @@
-SOURCE_URL=https://freefr.dl.sourceforge.net/project/mantisbt/mantis-stable/2.19.0/mantisbt-2.19.0.tar.gz
-SOURCE_SUM=5d074bc3605a9aae3c4b738e0ea667c3687e97a04e2702941158301ab9c86c14e8bc83fe8d5b9d34d5d011f5b5041d37b1bd44ea40815c2d1ae91f6130b5a987
-SOURCE_SUM_PRG=sha512sum
+SOURCE_URL=https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.24.3/mantisbt-2.24.3.tar.gz/download
+SOURCE_SUM=97220d47d2b3a30eb70828a9d2c47565799b6b701c34f87be00dc86d747a864d
+SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
 SOURCE_EXTRACT=true
-SOURCE_FILENAME=mantisbt.tar.gz
+SOURCE_FILENAME=

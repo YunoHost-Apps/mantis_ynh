@@ -3,23 +3,23 @@
     "id": "mantis",
     "packaging_format": 1,
     "description": {
-        "en": "An issue tracker that provides a balance between simplicity and power",
-        "fr": "Un gestionnaire de ticket avec un équilibre entre simplicité et puissance"
+        "en": "Bug tracking system based on a web interface.",
+        "fr": "Système de suivi des bugs reposant sur une interface web."
     },
-    "version": "2.19.0",
+    "version": "2.24.3~ynh1",
     "url": "https://www.mantisbt.org/",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "maintainer": {
         "name": "liberodark",
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 2.7.2"
+        "yunohost": ">= 3.8.1"
     },
     "multi_instance": false,
     "services": [
         "nginx",
-        "php5-fpm",
+        "php7.0-fpm",
         "mysql"
     ],
     "arguments": {
@@ -32,26 +32,42 @@
                 },
                 "example": "example.com"
             },
-
             {
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for Mantis /mantis is accepted",
-                    "fr": "Choisissez un chemin pour Mantis /mantis est accepté"
+                    "en": "Choose a path for Mantis",
+                    "fr": "Choisissez un chemin pour Mantis"
                 },
                 "example": "/mantis",
                 "default": "/mantis"
-            },
-            
+            },        
             {
                 "name": "is_public",
                 "type": "boolean",
                 "ask": {
-                    "en": "Is it a public site ?",
+                    "en": "Is it a public site?",
                     "fr": "Est-ce un site public ?"
                 },
-                "default": "true"
+                "default": true
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "ask": {
+                    "en": "Choose the Mantis administrator",
+                    "fr": "Choisissez l’administrateur de Mantis"
+                }
+            },
+            {
+                "name": "default_access_level",
+                "type": "string",
+                "ask": {
+                    "en": "Choose the default access level for new users",
+                    "fr": "Choisissez le niveau d'accès par défaut pour les nouveaux utilisateurs"
+                },
+                "choices": ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER"],
+                "default": "REPORTER"
             }
         ]
     }
