@@ -6,7 +6,7 @@
         "en": "Bug tracking system based on a web interface.",
         "fr": "Système de suivi des bugs reposant sur une interface web."
     },
-    "version": "2.24.3~ynh1",
+    "version": "2.24.3~ynh2",
     "url": "https://www.mantisbt.org/",
     "license": "GPL-3.0-only",
     "maintainer": {
@@ -14,9 +14,9 @@
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 3.8.1"
+        "yunohost": ">= 4.0.0"
     },
-    "multi_instance": false,
+    "multi_instance": true,
     "services": [
         "nginx",
         "php7.0-fpm",
@@ -57,7 +57,8 @@
                 "ask": {
                     "en": "Choose the Mantis administrator",
                     "fr": "Choisissez l’administrateur de Mantis"
-                }
+                },
+                "example": "johndoe"
             },
             {
                 "name": "default_access_level",
