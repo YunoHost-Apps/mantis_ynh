@@ -14,7 +14,7 @@
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 3.8.1"
+        "yunohost": ">= 4.0.0"
     },
     "multi_instance": false,
     "services": [
@@ -57,7 +57,8 @@
                 "ask": {
                     "en": "Choose the Mantis administrator",
                     "fr": "Choisissez l’administrateur de Mantis"
-                }
+                },
+                "example": "johndoe"
             },
             {
                 "name": "default_access_level",

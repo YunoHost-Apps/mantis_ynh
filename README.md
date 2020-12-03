@@ -37,7 +37,7 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 #### Multi-user support
 
-* Are LDAP and HTTP auth supported ? **No**
+* Are LDAP and HTTP auth supported ? **Yes**
 * Can the app be used by multiple users? **Yes**
 
 #### Supported architectures
