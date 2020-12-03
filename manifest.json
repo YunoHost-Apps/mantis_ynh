@@ -59,7 +59,7 @@
                     "fr": "Choisissez l’administrateur de Mantis"
                 },
                 "example": "johndoe"
-                },
+            },
             {
                 "name": "default_access_level",
                 "type": "string",
