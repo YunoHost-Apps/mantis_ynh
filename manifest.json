@@ -6,7 +6,7 @@
         "en": "Bug tracking system based on a web interface.",
         "fr": "Système de suivi des bugs reposant sur une interface web."
     },
-    "version": "2.24.3~ynh2",
+    "version": "2.24.4~ynh1",
     "url": "https://www.mantisbt.org/",
     "license": "GPL-3.0-only",
     "maintainer": {
@@ -19,7 +19,7 @@
     "multi_instance": true,
     "services": [
         "nginx",
-        "php7.0-fpm",
+        "php7.3-fpm",
         "mysql"
     ],
     "arguments": {

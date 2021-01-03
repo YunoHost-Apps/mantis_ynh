@@ -1,7 +1,7 @@
 # Mantis pour YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)  
-[![Installer Mantis pour YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=mantis)
+[![Installer Mantis pour YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mantis)
 
 *[Read this readme in english.](./README.md)* 
 
@@ -12,7 +12,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L'utilisation la plus courante de MantisBT est de suivre les bogues logiciels. Cependant, MantisBT est souvent configuré par les utilisateurs pour servir de système de suivi des problèmes plus générique et d'outil de gestion de projet.
 
-**Version incluse :** 2.24.3
+**Version incluse :** 2.24.4
 
 ## Captures d'écran
 
