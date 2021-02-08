@@ -98,14 +98,17 @@ phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 # MODIFY A CONFIG FILE
 #=================================================
 
-cp -a ../conf/config_inc.php $final_path/config/config_inc.php
+# cp -a ../conf/config_inc.php $final_path/config/config_inc.php
 
-ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DEFAULT_ACCESS_LEVEL__" --replace_string="$default_access_level" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DEFAULT_ACCESS_LEVEL__" --replace_string="$default_access_level" --target_file="$final_path/config/config_inc.php"
+
+random=$(ynh_string_random --length=20)
+ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
@@ -128,7 +131,7 @@ chmod -R 755 $final_path
 #=================================================
 
 # Set the app as temporarily public for cURL call
-ynh_permission_update --permission "main" --add "visitors"
+ynh_permission_update --permission="main" --add="visitors"
 
 # Reload NGINX
 ynh_systemd_action --service_name=nginx --action=reload
@@ -151,12 +154,12 @@ ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name
 #=================================================
 # SETUP SSOWAT
 #=================================================
-ynh_script_progression --message="Configuring SSOwat..." --weight=1
+ynh_script_progression --message="Configuring permissions..." --weight=1
 
 # Make app public if necessary or protect it
 if [ $is_public -eq 0 ]
 then
-	ynh_permission_update --permission "main" --remove "visitors"
+	ynh_permission_update --permission="main" --remove="visitors"
 fi
 
 #=================================================
