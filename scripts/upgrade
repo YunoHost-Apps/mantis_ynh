@@ -63,6 +63,14 @@ if [ -z "$default_access_level" ]; then
 	default_access_level="REPORTER"
 	ynh_app_setting_set --app=$app --key=default_access_level --value=$default_access_level
 fi
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
@@ -165,11 +173,11 @@ ynh_secure_remove "$final_path/admin"
 #=================================================
 # SETUP SSOWAT
 #=================================================
-ynh_script_progression --message="Configuring SSOwat..." --weight=1
+ynh_script_progression --message="Configuring permissions..." --weight=1
 
 if [ $contains_visitors -eq 1 ]
 then
-    ynh_permission_update --permission "main" --remove "visitors"
+    ynh_permission_update --permission="main" --remove="visitors"
 fi
 
 #=================================================
