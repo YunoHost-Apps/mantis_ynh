@@ -22,12 +22,6 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 
 * [Démo officielle](https://mantisbt.org/bugs/my_view_page.php)
 
-#### Où trouver l'utilisateur SQL et le mot de passe de la base.
-
-- **Utilisateur de la base de données :** mantis
-- **Nom de la base de données :** mantis
-- **Mot de passe :** voir le fichier de configuration `/var/www/mantis/config/config_inc.php`
-
 ## Documentation
 
  * Documentation officielle : https://mantisbt.org/documentation.php

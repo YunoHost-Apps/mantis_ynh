@@ -46,7 +46,6 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
-ynh_app_setting_set --app=$app --key=is_public --value=$is_public
 ynh_app_setting_set --app=$app --key=admin --value=$admin
 ynh_app_setting_set --app=$app --key=default_access_level --value=$default_access_level
 
@@ -92,20 +91,25 @@ ynh_script_progression --message="Configuring PHP-FPM..." --weight=3
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config --package="$extra_php_dependencies"
-phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 
-cp -a ../conf/config_inc.php $final_path/config/config_inc.php
+# cp -a ../conf/config_inc.php $final_path/config/config_inc.php
 
-ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/config/config_inc.php"
-ynh_replace_string --match_string="__DEFAULT_ACCESS_LEVEL__" --replace_string="$default_access_level" --target_file="$final_path/config/config_inc.php"
+password=$(ynh_string_random --length=20)
+
+ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
+ynh_store_file_checksum --file="$final_path/config/config_inc.php"
+
+# ynh_replace_string --match_string="__PASSWORD__" --replace_string="$password" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/config/config_inc.php"
+# ynh_replace_string --match_string="__DEFAULT_ACCESS_LEVEL__" --replace_string="$default_access_level" --target_file="$final_path/config/config_inc.php"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
@@ -165,6 +169,26 @@ fi
 ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# SEND A README FOR THE ADMIN
+#=================================================
+
+# WARNING : theses command are used in INSTALL, RESTORE
+# For any update do it in all files
+
+echo "Mantis was successfully installed :)
+
+- **Admin:**	$admin
+- **Asmin password:**	$password
+
+- **DB user:**	$db_user
+- **DB name:**	$db_name
+- **DB Password:**	$db_pwd
+
+If you're facing an issue or want to improve this app, please open a new issue in this project: https://github.com/YunoHost-Apps/mantis_ynh" > mail_to_send
+
+ynh_send_readme_to_admin --app_message="mail_to_send" --type="install"
 
 #=================================================
 # END OF SCRIPT
