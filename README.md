@@ -22,12 +22,6 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 * [Official demo](https://mantisbt.org/bugs/my_view_page.php)
 
-#### Where to find SQL user and password
-
-- **DB user:** mantis
-- **DB name:** mantis
-- **Password:** to be found in the config file `/var/www/mantis/config/config_inc.php`
-
 ## Documentation
 
  * Official documentation: https://mantisbt.org/documentation.php
