@@ -146,7 +146,10 @@ chmod -R 755 $final_path
 #=================================================
 
 # Set the app as temporarily public for cURL call
-if ! ynh_permission_has_user --permission="main" --user="visitors"
+ynh_permission_has_user --permission="main" --user="visitors"
+contains_visitors=$?
+
+if [ $contains_visitors -eq 1 ]
 then
     ynh_permission_update --permission="main" --add="visitors"
 fi
@@ -172,9 +175,9 @@ ynh_secure_remove "$final_path/admin"
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
 # Make app public if necessary or protect it
-if [ $is_public -eq 1 ]
+if [ $contains_visitors -eq 1 ]
 then
-	ynh_permission_update --permission="main" --add="visitors"
+	ynh_permission_update --permission="main" --remove="visitors"
 fi
 
 #=================================================
