@@ -43,7 +43,7 @@ $g_db_type         = 'mysqli';
 $g_db_table_prefix = '__DB_NAME__';
 
 # --- Security ---
-$g_crypto_master_salt = '__PASSWORD__';	# Random string of at least 16 chars, unique to the installation
+$g_crypto_master_salt = '__RANDOM__';	# Random string of at least 16 chars, unique to the installation
 
 # --- Anonymous Access / Signup ---
 $g_allow_signup				= ON;

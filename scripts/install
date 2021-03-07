@@ -97,7 +97,7 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 # MODIFY A CONFIG FILE
 #=================================================
 
-password=$(ynh_string_random --length=20)
+random=$(ynh_string_random --length=20)
 
 ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
 ynh_store_file_checksum --file="$final_path/config/config_inc.php"
@@ -154,26 +154,6 @@ fi
 ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
-
-#=================================================
-# SEND A README FOR THE ADMIN
-#=================================================
-
-# WARNING : theses command are used in INSTALL, RESTORE
-# For any update do it in all files
-
-echo "Mantis was successfully installed :)
-
-- **Admin:**	$admin
-- **Admin password:**	$password
-
-- **DB user:**	$db_user
-- **DB name:**	$db_name
-- **DB Password:**	$db_pwd
-
-If you're facing an issue or want to improve this app, please open a new issue in this project: https://github.com/YunoHost-Apps/mantis_ynh" > mail_to_send
-
-ynh_send_readme_to_admin --app_message="mail_to_send" --type="install"
 
 #=================================================
 # END OF SCRIPT
