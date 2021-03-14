@@ -100,7 +100,6 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 random=$(ynh_string_random --length=20)
 
 ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
-ynh_store_file_checksum --file="$final_path/config/config_inc.php"
 
 #=================================================
 # GENERIC FINALIZATION
