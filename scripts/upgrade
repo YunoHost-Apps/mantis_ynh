@@ -18,13 +18,12 @@ app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
-is_public=$(ynh_app_setting_get --app=$app --key=is_public)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_pwd=$(ynh_app_setting_get --app=$app --key=db_pwd)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 db_user=$db_name
-phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
-default_access_level=$(ynh_app_setting_get --app="$app" --key=default_access_level)
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
+default_access_level=$(ynh_app_setting_get --app=$app --key=default_access_level)
 
 #=================================================
 # CHECK VERSION
@@ -36,15 +35,6 @@ upgrade_type=$(ynh_check_app_version_changed)
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
-
-# Fix is_public as a boolean value
-if [ "$is_public" = "Yes" ]; then
-	ynh_app_setting_set --app=$app --key=is_public --value=1
-	is_public=1
-elif [ "$is_public" = "No" ]; then
-	ynh_app_setting_set --app=$app --key=is_public --value=0
-	is_public=0
-fi
 
 # If db_name doesn't exist, create it
 if [ -z "$db_name" ]; then
@@ -63,6 +53,14 @@ if [ -z "$default_access_level" ]; then
 	default_access_level="REPORTER"
 	ynh_app_setting_set --app=$app --key=default_access_level --value=$default_access_level
 fi
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
@@ -144,7 +142,7 @@ contains_visitors=$?
 
 if [ $contains_visitors -eq 1 ]
 then
-    ynh_permission_update --permission "main" --add "visitors"
+    ynh_permission_update --permission="main" --add="visitors"
 fi
 
 # Reload NGINX
@@ -165,11 +163,12 @@ ynh_secure_remove "$final_path/admin"
 #=================================================
 # SETUP SSOWAT
 #=================================================
-ynh_script_progression --message="Configuring SSOwat..." --weight=1
+ynh_script_progression --message="Configuring permissions..." --weight=1
 
+# Make app public if necessary or protect it
 if [ $contains_visitors -eq 1 ]
 then
-    ynh_permission_update --permission "main" --remove "visitors"
+	ynh_permission_update --permission="main" --remove="visitors"
 fi
 
 #=================================================

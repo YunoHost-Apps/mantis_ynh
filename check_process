@@ -18,10 +18,15 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
+		upgrade=1	from_commit=888c0e02d4fa4afae4800d7599ee3e145c942548
 		backup_restore=1
 		multi_instance=1
-		port_already_use=0
 		change_url=1
 ;;; Options
 Email=
 Notification=none
+;;; Upgrade options
+	; commit=888c0e02d4fa4afae4800d7599ee3e145c942548
+		name=Testing (#9)
+		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
+

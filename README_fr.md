@@ -12,7 +12,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L'utilisation la plus courante de MantisBT est de suivre les bogues logiciels. Cependant, MantisBT est souvent configuré par les utilisateurs pour servir de système de suivi des problèmes plus générique et d'outil de gestion de projet.
 
-**Version incluse :** 2.24.4
+**Version incluse :** 2.25.0
 
 ## Captures d'écran
 
@@ -21,12 +21,6 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 ## Démo
 
 * [Démo officielle](https://mantisbt.org/bugs/my_view_page.php)
-
-#### Où trouver l'utilisateur SQL et le mot de passe de la base.
-
-- **Utilisateur de la base de données :** mantis
-- **Nom de la base de données :** mantis
-- **Mot de passe :** voir le fichier de configuration `/var/www/mantis/config/config_inc.php`
 
 ## Documentation
 
