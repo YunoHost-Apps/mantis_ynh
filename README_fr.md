@@ -25,7 +25,7 @@ Mantis Bug Tracker est un système de suivi des bogues gratuit et open source. L
 ## Documentation
 
  * Documentation officielle : https://mantisbt.org/documentation.php
- * Documentation YunoHost :  https://yunohost.org/#/app_mantis_fr
+ * Documentation YunoHost :  https://yunohost.org/fr/app_mantis
 
 ## Caractéristiques spécifiques YunoHost
 
