@@ -36,8 +36,8 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/mantis%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/mantis%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/mantis/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/mantis.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/mantis.svg)](https://ci-apps-arm.yunohost.org/ci/apps/mantis/)
 
 ## Limitations
 
