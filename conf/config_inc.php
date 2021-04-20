@@ -85,6 +85,7 @@ $g_return_path_email    = 'admin@__DOMAIN__';	# the return address for bounced m
 
 # --- LDAP ---
 $g_login_method = LDAP;
+$g_ldap_use_starttls = OFF;
 $g_reauthentication = ON;
 $g_reauthentication_expiry = 600;
 $g_ldap_server = 'ldap://localhost:389';	
