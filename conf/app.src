@@ -1,5 +1,5 @@
-SOURCE_URL=https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.0/mantisbt-2.25.0.tar.gz/download
-SOURCE_SUM=d8973d3677ecb2ccbfee95e2267b3128049fbdcc59aa1f007686a342d93a4c0a
+SOURCE_URL=https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.1/mantisbt-2.25.1.tar.gz/download
+SOURCE_SUM=282441a295324cd386d0807aa609d91915a7e40fcac386687c031d2bdf2fdb90
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
