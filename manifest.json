@@ -8,6 +8,14 @@
     },
     "version": "2.25.1~ynh1",
     "url": "https://www.mantisbt.org/",
+    "upstream": {
+        "license": "GPL-3.0-only",
+        "website": "https://mantisbt.org/",
+        "demo": "https://mantisbt.org/bugs/my_view_page.php",
+        "admindoc": "https://mantisbt.org/documentation.php",
+        "userdoc": "https://yunohost.org/en/app_mantis",
+        "code": "https://github.com/mantisbt/mantisbt/"
+    },
     "license": "GPL-3.0-only",
     "maintainer": {
         "name": "liberodark",
