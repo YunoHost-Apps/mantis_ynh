@@ -158,7 +158,7 @@ ynh_local_curl $installUrl "install=2" "db_type=mysqli" "hostname=localhost" "db
 # Remove the `admin/` directory from within the MantisBT installation path.
 # The scripts within this directory should not be accessible on a live MantisBT site
 # or on any installation that is accessible via the Internet.
-ynh_secure_remove "$final_path/admin"
+ynh_secure_remove --file="$final_path/admin"
 
 #=================================================
 # SETUP SSOWAT
