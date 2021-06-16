@@ -109,6 +109,10 @@ random=$(ynh_string_random --length=20)
 
 ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
 
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
