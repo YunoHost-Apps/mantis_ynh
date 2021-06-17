@@ -134,17 +134,12 @@ ynh_add_fpm_config --package="$extra_php_dependencies"
 #=================================================
 
 # Set the app as temporarily public for cURL call
-ynh_permission_has_user --permission="main" --user="visitors"
-contains_visitors=$?
-
-if [ $contains_visitors -eq 1 ]
-then
-	ynh_permission_update --permission="main" --add="visitors"
-fi
+ynh_permission_update --permission="main" --add="visitors"
 
 # Reload NGINX
 ynh_systemd_action --service_name=nginx --action=reload
 
+# Installation with curl
 ynh_script_progression --message="Finalizing installation..." --weight=10
 
 # Installation with cURL
