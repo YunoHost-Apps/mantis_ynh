@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Système de suivi des bugs reposant sur une interface web.
 
-**Version incluse :** 2.25.1~ynh1
+**Version incluse :** 2.25.2~ynh1
 
 **Démo :** https://mantisbt.org/bugs/my_view_page.php
 

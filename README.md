@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Bug tracking system based on a web interface.
 
-**Shipped version:** 2.25.1~ynh1
+**Shipped version:** 2.25.2~ynh1
 
 **Demo:** https://mantisbt.org/bugs/my_view_page.php
 
