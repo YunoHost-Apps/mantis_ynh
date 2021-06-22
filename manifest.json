@@ -3,8 +3,8 @@
     "id": "mantis",
     "packaging_format": 1,
     "description": {
-        "en": "Bug tracking system based on a web interface.",
-        "fr": "Système de suivi des bugs reposant sur une interface web."
+        "en": "Bug tracking system.",
+        "fr": "Système de suivi des bugs."
     },
     "version": "2.25.2~ynh1",
     "url": "https://www.mantisbt.org/",
@@ -31,7 +31,8 @@
         "mysql"
     ],
     "arguments": {
-        "install": [{
+        "install" : [
+            {
                 "name": "domain",
                 "type": "domain",
                 "example": "example.com"
@@ -41,16 +42,16 @@
                 "type": "path",
                 "example": "/mantis",
                 "default": "/mantis"
-            },        
-            {
-                "name": "is_public",
-                "type": "boolean",
-                "default": true
             },
             {
                 "name": "admin",
                 "type": "user",
                 "example": "johndoe"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true
             },
             {
                 "name": "default_access_level",
