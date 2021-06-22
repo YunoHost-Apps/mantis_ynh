@@ -19,6 +19,7 @@ app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+is_public=$(ynh_app_setting_get --app=$app --key=is_public)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_user=$db_name
 db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
@@ -165,8 +166,11 @@ ynh_local_curl $installUrl "install=2" "db_type=mysqli" "hostname=localhost" "db
 # or on any installation that is accessible via the Internet.
 ynh_secure_remove --file="$final_path/admin"
 
-# Remove the public access
-ynh_permission_update --permission="main" --remove="visitors"
+# Make app public if necessary
+if [ $is_public -eq 0 ]
+then
+	ynh_permission_update --permission="main" --remove="visitors"
+fi
 
 #=================================================
 # RELOAD NGINX
