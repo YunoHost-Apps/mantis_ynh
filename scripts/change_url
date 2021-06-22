@@ -33,11 +33,12 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_user=$db_name
 db_pwd=$(ynh_app_setting_get --app=$app --key=db_pwd)
+default_access_level=$(ynh_app_setting_get --app=$app --key=default_access_level)
 
 #=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
+# BACKUP BEFORE CHANGE URL THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up Mantis before changing its URL (may take a while)..." --weight=7
+ynh_script_progression --message="Backing up the app before changing its URL (may take a while)..." --weight=7
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
@@ -45,7 +46,7 @@ ynh_clean_setup () {
 	# Remove the new domain config file, the remove script won't do it as it doesn't know yet its location.
 	ynh_secure_remove --file="/etc/nginx/conf.d/$new_domain.d/$app.conf"
 
-	# restore it if the upgrade fails
+	# Restore it if the upgrade fails
 	ynh_restore_upgradebackup
 }
 # Exit if an error occurs during the execution of the script
@@ -99,6 +100,14 @@ then
 fi
 
 #=================================================
+# MODIFY A CONFIG FILE
+#=================================================
+
+random=$(ynh_string_random --length=20)
+domain="$new_domain"
+ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
+
+#=================================================
 # GENERIC FINALISATION
 #=================================================
 # RELOAD NGINX
@@ -111,4 +120,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Change of URL completed for Mantis" --last
+ynh_script_progression --message="Change of URL completed for $app" --last
