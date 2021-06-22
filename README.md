@@ -15,7 +15,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Bug tracking system based on a web interface.
+Bug tracking system.
 
 **Shipped version:** 2.25.2~ynh1
 

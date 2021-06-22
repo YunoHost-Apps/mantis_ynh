@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Système de suivi des bugs reposant sur une interface web.
+Système de suivi des bugs.
 
 **Version incluse :** 2.25.2~ynh1
 
