@@ -17,6 +17,10 @@ Système de suivi des bugs.
 
 **Démo :** https://mantisbt.org/bugs/my_view_page.php
 
+## Captures d'écran
+
+![](./doc/screenshots/modern_my_view.png)
+
 ## Documentations et ressources
 
 * Site officiel de l'app : https://mantisbt.org/

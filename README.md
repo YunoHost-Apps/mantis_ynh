@@ -21,6 +21,10 @@ Bug tracking system.
 
 **Demo:** https://mantisbt.org/bugs/my_view_page.php
 
+## Screenshots
+
+![](./doc/screenshots/modern_my_view.png)
+
 ## Documentation and resources
 
 * Official app website: https://mantisbt.org/
