@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Système de suivi des bugs.
+MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
 
 **Version incluse :** 2.25.2~ynh1
 
@@ -25,7 +25,7 @@ Système de suivi des bugs.
 
 * Site officiel de l'app : https://mantisbt.org/
 * Documentation officielle utilisateur : https://yunohost.org/en/app_mantis
-* Documentation officielle de l'admin : https://mantisbt.org/documentation.php
+* Documentation officielle de l'admin : https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/
 * Dépôt de code officiel de l'app : https://github.com/mantisbt/mantisbt/
 * Documentation YunoHost pour cette app : https://yunohost.org/app_mantis
 * Signaler un bug : https://github.com/YunoHost-Apps/mantis_ynh/issues
