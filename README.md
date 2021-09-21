@@ -29,7 +29,7 @@ MantisBT is an open source issue tracker that provides a delicate balance betwee
 
 * Official app website: https://mantisbt.org/
 * Official user documentation: https://yunohost.org/en/app_mantis
-* Official admin documentation: https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/
+* Official admin documentation: https://mantisbt.org/documentation.php
 * Upstream app code repository: https://github.com/mantisbt/mantisbt/
 * YunoHost documentation for this app: https://yunohost.org/app_mantis
 * Report a bug: https://github.com/YunoHost-Apps/mantis_ynh/issues
