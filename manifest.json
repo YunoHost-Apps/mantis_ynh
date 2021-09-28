@@ -3,8 +3,8 @@
     "id": "mantis",
     "packaging_format": 1,
     "description": {
-        "en": "Bug tracking system.",
-        "fr": "Système de suivi des bugs."
+        "en": "Bug tracking system",
+        "fr": "Système de suivi des bugs"
     },
     "version": "2.25.2~ynh1",
     "url": "https://www.mantisbt.org/",
