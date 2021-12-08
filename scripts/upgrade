@@ -26,6 +26,9 @@ db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 default_access_level=$(ynh_app_setting_get --app=$app --key=default_access_level)
 
+fpm_footprint=$(ynh_app_setting_get --app=$app --key=fpm_footprint)
+fpm_usage=$(ynh_app_setting_get --app=$app --key=fpm_usage)
+
 #=================================================
 # CHECK VERSION
 #=================================================
@@ -70,6 +73,18 @@ fi
 if [ -z "$default_access_level" ]; then
 	default_access_level="REPORTER"
 	ynh_app_setting_set --app=$app --key=default_access_level --value=$default_access_level
+fi
+
+# If fpm_footprint doesn't exist, create it
+if [ -z "$fpm_footprint" ]; then
+	fpm_footprint=high
+	ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
+fi
+
+# If fpm_usage doesn't exist, create it
+if [ -z "$fpm_usage" ]; then
+	fpm_usage=medium
+	ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 fi
 
 # Cleaning legacy permissions
@@ -145,8 +160,8 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+# Recreate a dedicated PHP-FPM config
+ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
 
 #=================================================
 # SPECIFIC UPGRADE
