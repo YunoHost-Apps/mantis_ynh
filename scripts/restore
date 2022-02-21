@@ -74,8 +74,6 @@ chown -R $app:www-data "$final_path"
 #=================================================
 ynh_script_progression --message="Restoring PHP-FPM configuration..."
 
-ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
-
 # Recreate a dedicated php-fpm config
 ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint --phpversion=$phpversion
 
