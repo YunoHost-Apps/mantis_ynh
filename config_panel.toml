@@ -3,6 +3,16 @@ version = "1.0"
 [main]
 name = "Mantis configuration"
 
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.default_access_level]
+        ask = "Access level for new users"
+        choices = ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER"]
+        default = "REPORTER"
+        help = "Choose the default access level for new users"
+        bind = "$g_default_new_account_access_level:/var/www/__APP__/config/config_inc.php"
+
     [main.php_fpm_config]
     name = "PHP-FPM configuration"
 
