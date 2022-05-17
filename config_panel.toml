@@ -11,7 +11,7 @@ name = "Mantis configuration"
         choices = ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER"]
         default = "REPORTER"
         help = "Choose the default access level for new users"
-        bind = ":/var/www/__APP__/config/config_inc.php"
+        bind = ":/var/www/mantis/config/config_inc.php"
 
     [main.php_fpm_config]
     name = "PHP-FPM configuration"
