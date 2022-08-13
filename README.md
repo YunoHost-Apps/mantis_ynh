@@ -19,6 +19,7 @@ MantisBT is an open source issue tracker that provides a delicate balance betwee
 
 **Shipped version:** 2.25.5~ynh1
 
+
 **Demo:** https://mantisbt.org/bugs/my_view_page.php
 
 ## Screenshots
