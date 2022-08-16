@@ -6,7 +6,7 @@
         "en": "Bug tracking system",
         "fr": "Système de suivi des bugs"
     },
-    "version": "2.25.5~ynh1",
+    "version": "2.25.5~ynh2",
     "url": "https://www.mantisbt.org/",
     "upstream": {
         "license": "GPL-3.0-only",
@@ -17,8 +17,8 @@
     },
     "license": "GPL-3.0-only",
     "maintainer": {
-        "name": "eric_G",
-        "email": ""
+        "name": "liberodark",
+        "email": "liberodark@gmail.com"
     },
     "requirements": {
         "yunohost": ">= 11.0.9"
