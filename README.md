@@ -17,7 +17,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
 
-**Shipped version:** 2.25.5~ynh1
+**Shipped version:** 2.25.5~ynh2
+
 
 **Demo:** https://mantisbt.org/bugs/my_view_page.php
 
