@@ -6,7 +6,7 @@
         "en": "Bug tracking system",
         "fr": "Système de suivi des bugs"
     },
-    "version": "2.25.5~ynh2",
+    "version": "2.25.5~ynh3",
     "url": "https://www.mantisbt.org/",
     "upstream": {
         "license": "GPL-3.0-only",
