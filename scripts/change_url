@@ -26,13 +26,6 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 ynh_script_progression --message="Loading installation settings..." --weight=1
 
-# Needed for helper "ynh_add_nginx_config"
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-
-# Add settings here as needed by your application
-db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_user=$db_name
-db_pwd=$(ynh_app_setting_get --app=$app --key=db_pwd)
 default_access_level=$(ynh_app_setting_get --app=$app --key=default_access_level)
 
 #=================================================
@@ -105,7 +98,7 @@ fi
 
 random=$(ynh_string_random --length=20)
 domain="$new_domain"
-ynh_add_config --template="../conf/config_inc.php" --destination="$final_path/config/config_inc.php"
+ynh_add_config --template="../conf/config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 #=================================================
 # GENERIC FINALISATION
