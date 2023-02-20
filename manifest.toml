@@ -5,7 +5,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.5~ynh3"
+version = "2.25.5~ynh4"
 
 maintainers = ["eric_G"]
 
