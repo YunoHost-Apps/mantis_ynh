@@ -67,6 +67,14 @@ ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_
 ynh_add_nginx_config
 
 #=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
+
+# Create a dedicated NGINX config
+ynh_add_nginx_config
+
+#=================================================
 # SPECIFIC UPGRADE
 #=================================================
 # SETUP APPLICATION WITH CURL
