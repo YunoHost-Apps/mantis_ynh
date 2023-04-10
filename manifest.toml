@@ -17,7 +17,7 @@ admindoc = "https://mantisbt.org/documentation.php"
 code = "https://github.com/mantisbt/mantisbt/"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.1.17"
 architectures = "all"
 multi_instance = true
 ldap = true
