@@ -5,7 +5,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.6~ynh1"
+version = "2.25.7~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -17,7 +17,7 @@ admindoc = "https://mantisbt.org/documentation.php"
 code = "https://github.com/mantisbt/mantisbt/"
 
 [integration]
-yunohost = ">= 11.1.17"
+yunohost = ">= 11.1.19"
 architectures = "all"
 multi_instance = true
 ldap = true
@@ -53,8 +53,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.6/mantisbt-2.25.6.tar.gz/download"
-        sha256 = "e8c06f3eb4b468ed7903d32fe17ef7bd40ef54c20e3e2870f333901547b522fd"
+        url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.7/mantisbt-2.25.7.tar.gz/download"
+        sha256 = "b47d7ef9764c50f7aed11ee07a663e841229dbd1ae7e056d94d976530c2df7fe"
 
     [resources.system_user]
 
