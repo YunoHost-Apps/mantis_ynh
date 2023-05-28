@@ -13,6 +13,7 @@ source /usr/share/yunohost/helpers
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
+random=$(ynh_string_random --length=20)
 fpm_footprint="low"
 fpm_free_footprint=0
 fpm_usage="low"
@@ -52,13 +53,10 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-random=$(ynh_string_random --length=20)
-
 ynh_add_config --template="../conf/config_inc.php" --destination="$install_dir/config/config_inc.php"
 
-chmod 750 "$install_dir"
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chmod 400 "$install_dir/config/config_inc.php"
+chown $app:$app "$install_dir/config/config_inc.php"
 
 #=================================================
 # SETUP APPLICATION WITH CURL
