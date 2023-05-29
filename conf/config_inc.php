@@ -716,7 +716,7 @@ $g_email_dkim_enable = OFF;
  * @see $g_email_dkim_enable
  * @global string $g_email_dkim_domain
  */
-$g_email_dkim_domain = 'example.com';
+$g_email_dkim_domain = '__DOMAIN__';
 
 /**
  * DomainKeys Identified Mail (DKIM) Signatures private key path
@@ -767,7 +767,7 @@ $g_email_dkim_passphrase = '';
  * @see $g_email_dkim_enable
  * @global string $g_email_dkim_identity
  */
-$g_email_dkim_identity = 'noreply@example.com';
+$g_email_dkim_identity = 'noreply@__DOMAIN__';
 
 /**
  * Enable S/MIME signature.
