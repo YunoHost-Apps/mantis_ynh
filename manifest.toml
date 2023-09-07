@@ -51,10 +51,9 @@ ram.runtime = "50M"
 [resources]
 
     [resources.sources]
-
         [resources.sources.main]
-        url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.7/mantisbt-2.25.7.zip/download"
-        sha256 = "e237d5cfe5338a205ca94b55b34b17edb997581a46e78bf602659950be2a38db"
+        url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.7.tar.gz"
+        sha256 = "8184e979b12175cf8644e051ad8d70a27665b92f0afcd4c9ba9f2d26b16636c4"
         in_subdir = true
 
     [resources.system_user]
@@ -65,7 +64,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages ="mariadb-server php8.0-mbstring php8.0-gmp php8.0-curl php8.0-intl php8.0-xmlrpc php8.0-mysql php8.0-gd php8.0-xml php8.0-cli php8.0-zip php8.0-bcmath"
+    packages ="mariadb-server, php8.0-mbstring, php8.0-gmp, php8.0-curl, php8.0-intl, php8.0-xmlrpc, php8.0-mysql, php8.0-gd, php8.0-xml, php8.0-cli, php8.0-zip, php8.0-bcmath"
 
     [resources.database]
     type = "mysql"
