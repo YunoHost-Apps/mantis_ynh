@@ -52,9 +52,9 @@ $g_anonymous_account		= '';
 
 # --- Email Configuration ---
 $g_phpMailer_method		= PHPMAILER_METHOD_MAIL; # or PHPMAILER_METHOD_SMTP, PHPMAILER_METHOD_SENDMAIL
-$g_smtp_host			= 'localhost';			 # used with PHPMAILER_METHOD_SMTP
+$g_smtp_host			= '127.0.0.1';			 # used with PHPMAILER_METHOD_SMTP
 $g_smtp_username		= '__APP__';			 # used with PHPMAILER_METHOD_SMTP
-$g_smtp_password		= '';					 # used with PHPMAILER_METHOD_SMTP
+$g_smtp_password		= '__MAIL_PWD__';		 # used with PHPMAILER_METHOD_SMTP
 $g_webmaster_email      = 'webmaster@__DOMAIN__';
 $g_from_email           = 'noreply@__DOMAIN__';	 # the "From: " field in emails
 $g_return_path_email    = 'admin@__DOMAIN__';	 # the return address for bounced mail
