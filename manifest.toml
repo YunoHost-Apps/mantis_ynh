@@ -54,7 +54,7 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.8/mantisbt-2.25.8.zip/download"
         sha256 = "c8bd4b585183cb42cdd9fbb00c4e5d5945e01533882d7e534b33dc45025752ff"
-        in_subdir = true
+        in_subdir = false
 
     [resources.system_user]
     allow_email = true
