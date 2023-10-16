@@ -51,14 +51,14 @@ $g_allow_anonymous_login	= OFF;
 $g_anonymous_account		= '';
 
 # --- Email Configuration ---
-$g_phpMailer_method		= PHPMAILER_METHOD_MAIL; # or PHPMAILER_METHOD_SMTP, PHPMAILER_METHOD_SENDMAIL
+$g_phpMailer_method		= PHPMAILER_METHOD_SMTP; # or PHPMAILER_METHOD_SMTP, PHPMAILER_METHOD_SENDMAIL
 $g_smtp_host			= '127.0.0.1';			 # used with PHPMAILER_METHOD_SMTP
 $g_smtp_username		= '__APP__';			 # used with PHPMAILER_METHOD_SMTP
 $g_smtp_password		= '__MAIL_PWD__';		 # used with PHPMAILER_METHOD_SMTP
-$g_webmaster_email      = 'webmaster@__DOMAIN__';
-$g_from_email           = 'noreply@__DOMAIN__';	 # the "From: " field in emails
-$g_return_path_email    = 'admin@__DOMAIN__';	 # the return address for bounced mail
-# $g_from_name			= 'Mantis Bug Tracker';
+$g_webmaster_email      = 'webmaster@__MAIN_DOMAIN__';
+$g_from_email           = 'noreply@__MAIN_DOMAIN__';	 # the "From: " field in emails
+$g_return_path_email    = 'admin@__MAIN_DOMAIN__';	 # the return address for bounced mail
+$g_from_name			= 'Mantis Bug Tracker';
 # $g_email_receive_own	= OFF;
 # $g_email_send_using_cronjob = OFF;
 
