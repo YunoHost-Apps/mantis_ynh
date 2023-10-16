@@ -52,8 +52,8 @@ ram.runtime = "50M"
 
     [resources.sources]
         [resources.sources.main]
-        url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.8.tar.gz"
-        sha256 = "8d96bf93a283267fc088229661432831829d18b9fc1d20bff35df64be69ea27d"
+        url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.8/mantisbt-2.25.8.zip/download"
+        sha256 = "c8bd4b585183cb42cdd9fbb00c4e5d5945e01533882d7e534b33dc45025752ff"
         in_subdir = true
 
     [resources.system_user]
