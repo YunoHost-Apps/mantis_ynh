@@ -9,6 +9,8 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+random=$(ynh_string_random --length=20)
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -36,7 +38,6 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-random=$(ynh_string_random --length=20)
 ynh_add_config --template="../conf/config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 chmod -R o-rwx "$install_dir"
