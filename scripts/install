@@ -16,7 +16,6 @@ random=$(ynh_string_random --length=20)
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=1
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
 chmod -R o-rwx "$install_dir"
@@ -27,10 +26,8 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 ynh_script_progression --message="Adding system configurations related to $app ..." --weight=1
 
-# Create a dedicated PHP-FPM config
 ynh_add_fpm_config
 
-# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
@@ -38,7 +35,7 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="../conf/config_inc.php" --destination="$install_dir/config/config_inc.php"
+ynh_add_config --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"

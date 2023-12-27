@@ -22,7 +22,7 @@ ynh_change_url_nginx_config
 
 random=$(ynh_string_random --length=20)
 domain="$new_domain"
-ynh_add_config --template="../conf/config_inc.php" --destination="$install_dir/config/config_inc.php"
+ynh_add_config --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 #=================================================
 # END OF SCRIPT

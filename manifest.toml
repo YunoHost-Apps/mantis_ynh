@@ -5,7 +5,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.8~ynh1"
+version = "2.26.0~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -20,8 +20,11 @@ code = "https://github.com/mantisbt/mantisbt/"
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = true
+
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -52,8 +55,8 @@ ram.runtime = "50M"
 
     [resources.sources]
         [resources.sources.main]
-        url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.8.tar.gz"
-        sha256 = "8d96bf93a283267fc088229661432831829d18b9fc1d20bff35df64be69ea27d"
+        url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.26.0.tar.gz"
+        sha256 = "45e681d10396041bd17563a4cf8e2f0dca5a562048c26cc638c823a0984e970c"
         in_subdir = false
 
     [resources.system_user]
