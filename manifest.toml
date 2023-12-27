@@ -57,7 +57,6 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.26.0.tar.gz"
         sha256 = "45e681d10396041bd17563a4cf8e2f0dca5a562048c26cc638c823a0984e970c"
-        in_subdir = false
 
     [resources.system_user]
     allow_email = true
