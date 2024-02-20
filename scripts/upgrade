@@ -40,7 +40,8 @@ fi
 ynh_script_progression --message="Upgrading source files..." --weight=5
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir=$install_dir --full_replace=1 --keep="config/config_inc.php"
+ynh_setup_source --dest_dir=$install_dir --full_replace=1 \
+    --keep="config/config_inc.php config/custom_strings_inc.php config/custom_constants_inc.php config/custom_functions_inc.php"
 
 # Set permissions to app files
 chmod -R o-rwx "$install_dir"
