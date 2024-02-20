@@ -57,9 +57,8 @@ ram.runtime = "50M" # FIXME: replace with an **estimate** minimum ram requiremen
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.7.tar.gz"
-    sha256 = "8184e979b12175cf8644e051ad8d70a27665b92f0afcd4c9ba9f2d26b16636c4"
-    autoupdate.strategy = "latest_github_tag"
+    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.5/mantisbt-2.25.5.tar.gz"
+    sha256 = "472daec79e84733cbfe9d064243afb897e605ede135dcac33a85cd7229f584f5"
 
     [resources.system_user]
 
