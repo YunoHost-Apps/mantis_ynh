@@ -1,6 +1,0 @@
-SOURCE_URL=https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.7.tar.gz
-SOURCE_SUM=8184e979b12175cf8644e051ad8d70a27665b92f0afcd4c9ba9f2d26b16636c4
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
-SOURCE_EXTRACT=true
