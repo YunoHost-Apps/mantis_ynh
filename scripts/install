@@ -63,18 +63,12 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Setting up application with CURL..."  --weight=10
 
-ynh_exec_warn ls -lah "$install_dir"
-ynh_exec_warn ls -lah "$install_dir/admin"
-
-
 # Installation with cURL
 ynh_local_curl "/admin/install.php?submit" \
     "install=2" "hostname=localhost" "timezone=UTC" \
     "admin_username=" "admin_password=" \
     "db_type=mysqli" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" \
     "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table"
-
-ynh_local_curl "/login.php"
 
 # Remove the `admin/` directory from within the MantisBT installation path.
 # The scripts within this directory should not be accessible on a live MantisBT site
