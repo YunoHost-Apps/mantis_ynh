@@ -9,7 +9,7 @@ description.fr = "Système de suivi des bugs"
 
 version = "2.25.7~ynh1"
 
-maintainers = ["liberodark"]
+maintainers = [ ]
 
 [upstream]
 license = "GPL-3.0-only"
