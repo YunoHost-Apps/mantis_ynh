@@ -23,8 +23,11 @@ cpe = "cpe:2.3:a:jenkins:mantis"
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = true
+
 sso = false
+
 disk = "50M"
 ram.build = "120M"
 ram.runtime = "50M"
@@ -57,8 +60,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.5/mantisbt-2.25.5.tar.gz"
-    sha256 = "472daec79e84733cbfe9d064243afb897e605ede135dcac33a85cd7229f584f5"
+    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.5/mantisbt-2.26.0.tar.gz"
+    sha256 = "e278303e167c31e8f57fd52e266c15da71633718ae0d101101168847830e4f24"
 
     [resources.system_user]
 
