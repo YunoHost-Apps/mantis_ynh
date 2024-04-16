@@ -7,7 +7,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.7~ynh1"
+version = "2.25.7~ynh2"
 
 maintainers = ["liberodark"]
 
