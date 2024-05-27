@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Mantis
+# YunoHost 上的 Mantis
 
 [![集成程度](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
