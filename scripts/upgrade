@@ -22,26 +22,13 @@ if [ -z "${default_access_level:-}" ]; then
     ynh_app_setting_set --app="$app" --key="default_access_level" --value="$default_access_level"
 fi
 
-# If fpm_footprint doesn't exist, create it
-if [ -z "${fpm_footprint:-}" ]; then
-    fpm_footprint=low
-    ynh_app_setting_set --app="$app" --key="fpm_footprint" --value="$fpm_footprint"
-fi
-
-# If fpm_usage doesn't exist, create it
-if [ -z "${fpm_usage:-}" ]; then
-    fpm_usage=low
-    ynh_app_setting_set --app="$app" --key="fpm_usage" --value="$fpm_usage"
-fi
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Upgrading source files..." --weight=5
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir=$install_dir --full_replace=1 \
-    --keep="config/config_inc.php config/custom_strings_inc.php config/custom_constants_inc.php config/custom_functions_inc.php"
+ynh_setup_source --dest_dir=$install_dir --full_replace=1 --keep="config"
 
 # Set permissions to app files
 chmod -R o-rwx "$install_dir"
