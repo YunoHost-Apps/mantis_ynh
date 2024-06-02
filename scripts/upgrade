@@ -57,7 +57,7 @@ ynh_secure_remove --file="$install_dir/admin"
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
 # Recreate a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion="$phpversion" --usage="$fpm_usage" --footprint="$fpm_footprint"
+ynh_add_fpm_config
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
