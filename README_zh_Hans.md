@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Mantis
+# YunoHost 上的 Mantis
 
 [![集成程度](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
@@ -18,7 +18,7 @@
 
 MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
 
-**分发版本：** 2.25.7~ynh2
+**分发版本：** 2.25.7~ynh3
 
 **演示：** <https://mantisbt.org/bugs/my_view_page.php>
 
