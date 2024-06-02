@@ -64,7 +64,7 @@ ynh_local_curl "/admin/install.php?submit" \
 ynh_secure_remove --file="$install_dir/admin"
 
 # Set the user chosen at installation as administrator
-ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" <<< "UPDATE mantis_user_table SET username = '$admin' WHERE id = 1;"
+ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" <<< "UPDATE 'mantis_user_table' SET username = '$admin' WHERE id = 1;"
 
 #=================================================
 # END OF SCRIPT
