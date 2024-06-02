@@ -7,9 +7,9 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.7~ynh2"
+version = "2.25.7~ynh3"
 
-maintainers = ["liberodark"]
+maintainers = []
 
 [upstream]
 license = "GPL-3.0-only"
@@ -81,6 +81,7 @@ ram.runtime = "50M"
         "php8.0-xml",
         "php8.0-cli",
         "php8.0-zip",
+        "php8.0-ldap",
         "php8.0-bcmath",
         "mariadb-server",
     ]
