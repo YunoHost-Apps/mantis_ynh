@@ -18,7 +18,7 @@ NON debe editarse manualmente.
 
 MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
 
-**Versión proporcionada:** 2.25.7~ynh3
+**Versión proporcionada:** 2.26.0~ynh1
 
 **Demo:** <https://mantisbt.org/bugs/my_view_page.php>
 
