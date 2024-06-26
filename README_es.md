@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Mantis para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/mantis.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
 [![Instalar Mantis con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mantis)
 
@@ -18,7 +18,7 @@ No se debe editar a mano.
 
 MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
 
-**Versión actual:** 2.25.7~ynh3
+**Versión actual:** 2.26.0~ynh1
 
 **Demo:** <https://mantisbt.org/bugs/my_view_page.php>
 
