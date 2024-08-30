@@ -1,56 +1,48 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+ynh_script_progression "Ensuring downward compatibility..."
 
 # If default_access_level doesn't exist, create it
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=default_access_level --value="REPORTER"
 if [ -z "${default_access_level:-}" ]; then
     default_access_level="REPORTER"
-    ynh_app_setting_set --app="$app" --key="default_access_level" --value="$default_access_level"
+    ynh_app_setting_set --key="default_access_level" --value="$default_access_level"
 fi
 
 # If fpm_footprint doesn't exist, create it
 if [ -z "${fpm_footprint:-}" ]; then
     fpm_footprint=low
-    ynh_app_setting_set --app="$app" --key="fpm_footprint" --value="$fpm_footprint"
+#REMOVEME? Everything about fpm_footprint is removed in helpers2.1... |     ynh_app_setting_set --key="fpm_footprint" --value="$fpm_footprint"
 fi
 
 # If fpm_usage doesn't exist, create it
 if [ -z "${fpm_usage:-}" ]; then
     fpm_usage=low
-    ynh_app_setting_set --app="$app" --key="fpm_usage" --value="$fpm_usage"
+#REMOVEME? Everything about fpm_usage is removed in helpers2.1... |     ynh_app_setting_set --key="fpm_usage" --value="$fpm_usage"
 fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Upgrading source files..." --weight=5
+ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir=$install_dir --full_replace=1 \
+ynh_setup_source --dest_dir=$install_dir --full_replace \
     --keep="config/config_inc.php config/custom_strings_inc.php config/custom_constants_inc.php config/custom_functions_inc.php"
 
 # Set permissions to app files
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
-ynh_script_progression --message="Finalizing installation with Curl..." --weight=10
+ynh_script_progression "Finalizing installation with Curl..."
 
 # Installation with cURL
 ynh_local_curl "/admin/install.php?submit" \
@@ -62,21 +54,21 @@ ynh_local_curl "/admin/install.php?submit" \
 # Remove the `admin/` directory from within the MantisBT installation path.
 # The scripts within this directory should not be accessible on a live MantisBT site
 # or on any installation that is accessible via the Internet.
-ynh_secure_remove --file="$install_dir/admin"
+ynh_safe_rm "$install_dir/admin"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+ynh_script_progression "Upgrading system configurations related to $app..."
 
 # Recreate a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion="$phpversion" --usage="$fpm_usage" --footprint="$fpm_footprint"
+ynh_config_add_phpfpm
 
 # Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
