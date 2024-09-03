@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Mantis
 
-[![集成程度](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/mantis.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
 [![使用 YunoHost 安装 Mantis](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mantis)
 

@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Mantis for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![Working status](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
+[![Integration level](https://dash.yunohost.org/integration/mantis.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/) ![Working status](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
 [![Install Mantis with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mantis)
 

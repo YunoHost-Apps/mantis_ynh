@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Mantis YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/mantis.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)
 
 [![Instalatu Mantis YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mantis)
 
