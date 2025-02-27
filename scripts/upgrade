@@ -9,11 +9,7 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Ensuring downward compatibility..."
 
 # If default_access_level doesn't exist, create it
-# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=default_access_level --value="REPORTER"
-if [ -z "${default_access_level:-}" ]; then
-    default_access_level="REPORTER"
-    ynh_app_setting_set --key="default_access_level" --value="$default_access_level"
-fi
+ynh_app_setting_set_default --key=default_access_level --value="REPORTER"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -23,9 +19,6 @@ ynh_script_progression "Upgrading source files..."
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir=$install_dir --full_replace --keep="config"
 
-# Set permissions to app files
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
