@@ -27,7 +27,7 @@ MantisBT est un gestionnaire d'incidents open source qui offre un équilibre dé
 
 ## Captures d’écran
 
-![Capture d’écran de Mantis](./doc/screenshots/modern_my_view.png)
+![Capture d’écran de Mantis](./doc/screenshots/screenshot.png)
 
 ## Documentations et ressources
 
