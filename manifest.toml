@@ -7,7 +7,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.26.0~ynh1"
+version = "2.27.0~ynh1"
 
 maintainers = []
 
@@ -60,8 +60,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.26.2/mantisbt-2.26.2.tar.gz"
-    sha256 = "a2dca9043a5937a4bc2a872737ab608d2e86f96eb8f1991c1461f9c4e9d918d2"
+    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.27.0/mantisbt-2.27.0.tar.gz"
+    sha256 = "8ab7201dccbc991b99170bcc7caa644a541401168c84f156e1629649a84e13af"
 
     [resources.system_user]
 
@@ -72,20 +72,20 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php8.2-mbstring",
-        "php8.2-fpm",
-        "php8.2-common",
-        "php8.2-gmp",
-        "php8.2-curl",
-        "php8.2-intl",
-        "php8.2-xmlrpc",
-        "php8.2-mysql",
-        "php8.2-gd",
-        "php8.2-xml",
-        "php8.2-cli",
-        "php8.2-zip",
-        "php8.2-ldap",
-        "php8.2-bcmath",
+        "php8.3-mbstring",
+        "php8.3-fpm",
+        "php8.3-common",
+        "php8.3-gmp",
+        "php8.3-curl",
+        "php8.3-intl",
+        "php8.3-xmlrpc",
+        "php8.3-mysql",
+        "php8.3-gd",
+        "php8.3-xml",
+        "php8.3-cli",
+        "php8.3-zip",
+        "php8.3-ldap",
+        "php8.3-bcmath",
         "mariadb-server",
     ]
 
