@@ -27,7 +27,7 @@ MantisBT is an open source issue tracker that provides a delicate balance betwee
 
 ## Screenshots
 
-![Screenshot of Mantis](./doc/screenshots/modern_my_view.png)
+![Screenshot of Mantis](./doc/screenshots/screenshot.png)
 
 ## Documentation and resources
 
