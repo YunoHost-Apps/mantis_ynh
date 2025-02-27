@@ -1,0 +1,1 @@
+MantisBT est un gestionnaire d'incidents open source qui offre un équilibre délicat entre simplicité et puissance. Les utilisateurs peuvent démarrer en quelques minutes et commencer à gérer leurs projets tout en collaborant efficacement avec leurs coéquipiers et leurs clients.
