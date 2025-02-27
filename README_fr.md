@@ -18,7 +18,8 @@ Il NE doit PAS être modifié à la main.
 
 ## Vue d’ensemble
 
-MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively. 
+MantisBT est un gestionnaire d'incidents open source qui offre un équilibre délicat entre simplicité et puissance. Les utilisateurs peuvent démarrer en quelques minutes et commencer à gérer leurs projets tout en collaborant efficacement avec leurs coéquipiers et leurs clients.
+
 
 **Version incluse :** 2.27.0~ynh1
 
