@@ -21,7 +21,7 @@ EZ editatu eskuz.
 MantisBT is an open source issue tracker that provides a delicate balance between simplicity and power. Users are able to get started in minutes and start managing their projects while collaborating with their teammates and clients effectively.
 
 
-**Paketatutako bertsioa:** 2.27.0~ynh1
+**Paketatutako bertsioa:** 2.27.0~ynh2
 
 **Demoa:** <https://mantisbt.org/bugs/my_view_page.php>
 
@@ -41,7 +41,7 @@ MantisBT is an open source issue tracker that provides a delicate balance betwee
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/mantis_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/mantis_ynh/tree/testing --debug
