@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -7,53 +11,42 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-#REMOVEME? Everything about fpm_footprint is removed in helpers2.1... | fpm_footprint="low"
-#REMOVEME? Everything about fpm_free_footprint is removed in helpers2.1... | fpm_free_footprint=0
-#REMOVEME? Everything about fpm_usage is removed in helpers2.1... | fpm_usage="low"
-
-#REMOVEME? Everything about fpm_footprint is removed in helpers2.1... | ynh_app_setting_set --key=fpm_footprint --value=$fpm_footprint
-#REMOVEME? Everything about fpm_free_footprint is removed in helpers2.1... | ynh_app_setting_set --key=fpm_free_footprint --value=$fpm_free_footprint
-#REMOVEME? Everything about fpm_usage is removed in helpers2.1... | ynh_app_setting_set --key=fpm_usage --value=$fpm_usage
+random=$(ynh_string_random --length=20)
+ynh_app_setting_set --key=random --value=$random
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
-# Set permissions to app files
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
-# SPECIFIC SETUP
+# APP INITIAL CONFIGURATION
 #=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression "Adding $app's configuration..."
-
-random=$(ynh_string_random --length=20)
+ynh_script_progression "Adding $app's configuration files..."
 
 ynh_config_add --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
+# Create a PHP-FPM config (with conf/extra_php-fpm.conf being appended to it)
 ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
+# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
 ynh_script_progression "Setting up application with CURL..."
+
+ynh_composer_install
+ynh_composer_exec install --no-dev
 
 # Installation with cURL
 ynh_local_curl "/admin/install.php?submit" \
