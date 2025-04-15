@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #=================================================
-# GENERIC START
-#=================================================
 # IMPORT GENERIC HELPERS
 #=================================================
 
@@ -13,55 +11,42 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-fpm_footprint="low"
-fpm_free_footprint=0
-fpm_usage="low"
-
-ynh_app_setting_set --app="$app" --key=fpm_footprint --value=$fpm_footprint
-ynh_app_setting_set --app="$app" --key=fpm_free_footprint --value=$fpm_free_footprint
-ynh_app_setting_set --app="$app" --key=fpm_usage --value=$fpm_usage
+random=$(ynh_string_random --length=20)
+ynh_app_setting_set --key=random --value=$random
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
-# Set permissions to app files
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
 #=================================================
-# SPECIFIC SETUP
+# APP INITIAL CONFIGURATION
 #=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression --message="Adding a configuration file..."
+ynh_script_progression "Adding $app's configuration files..."
 
-random=$(ynh_string_random --length=20)
-
-ynh_add_config --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
-
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
+ynh_config_add --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
+# Create a PHP-FPM config (with conf/extra_php-fpm.conf being appended to it)
+ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+# Create a dedicated NGINX config using the conf/nginx.conf template
+ynh_config_add_nginx
 
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
-ynh_script_progression --message="Setting up application with CURL..."  --weight=10
+ynh_script_progression "Setting up application with CURL..."
+
+ynh_composer_install
+ynh_composer_exec install --no-dev
 
 # Installation with cURL
 ynh_local_curl "/admin/install.php?submit" \
@@ -73,13 +58,13 @@ ynh_local_curl "/admin/install.php?submit" \
 # Remove the `admin/` directory from within the MantisBT installation path.
 # The scripts within this directory should not be accessible on a live MantisBT site
 # or on any installation that is accessible via the Internet.
-ynh_secure_remove --file="$install_dir/admin"
+ynh_safe_rm "$install_dir/admin"
 
 # Set the user chosen at installation as administrator
-ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" <<< "UPDATE ${db_name}_user_table SET username = '$admin' WHERE id = 1;"
+ynh_mysql_db_shell <<< "UPDATE ${db_name}_user_table SET username = '$admin' WHERE id = 1;"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"

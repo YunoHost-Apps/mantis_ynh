@@ -7,7 +7,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.7~ynh3"
+version = "2.25.7~ynh4"
 
 maintainers = []
 
@@ -20,11 +20,15 @@ code = "https://github.com/mantisbt/mantisbt/"
 cpe = "cpe:2.3:a:jenkins:mantis"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.18"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = true
+
 sso = false
+
 disk = "50M"
 ram.build = "120M"
 ram.runtime = "50M"
@@ -37,12 +41,12 @@ ram.runtime = "50M"
     type = "path"
     default = "/mantis"
 
-    [install.admin]
-    type = "user"
-
     [install.init_main_permission]
     type = "group"
     default = "visitors"
+
+    [install.admin]
+    type = "user"
 
     [install.default_access_level]
     ask.en = "Choose the default access level for new users"
@@ -57,32 +61,36 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.25.5/mantisbt-2.25.5.tar.gz"
-    sha256 = "472daec79e84733cbfe9d064243afb897e605ede135dcac33a85cd7229f584f5"
+    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.5.tar.gz"
+    sha256 = "cd1e2f3f6a58476c4e86e3c187c939473e78dd71df3c535d50ab031f77e01fcf"
+
+    autoupdate.strategy = "latest_github_tag"
+    autoupdate.version_regex = "^release-(.*)$"
 
     [resources.system_user]
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
 
     [resources.apt]
     packages = [
-        "php8.0-mbstring",
-        "php8.0-fpm",
-        "php8.0-common",
-        "php8.0-gmp",
-        "php8.0-curl",
-        "php8.0-intl",
-        "php8.0-xmlrpc",
-        "php8.0-mysql",
-        "php8.0-gd",
-        "php8.0-xml",
-        "php8.0-cli",
-        "php8.0-zip",
-        "php8.0-ldap",
-        "php8.0-bcmath",
+        "php8.2-mbstring",
+        "php8.2-fpm",
+        "php8.2-common",
+        "php8.2-gmp",
+        "php8.2-curl",
+        "php8.2-intl",
+        "php8.2-xmlrpc",
+        "php8.2-mysql",
+        "php8.2-gd",
+        "php8.2-xml",
+        "php8.2-cli",
+        "php8.2-zip",
+        "php8.2-ldap",
+        "php8.2-bcmath",
         "mariadb-server",
     ]
 

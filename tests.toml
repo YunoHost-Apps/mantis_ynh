@@ -1,7 +1,19 @@
 #:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/tests.v1.schema.json
 
-test_format = 1
+test_format = 1.0
 
 [default]
 
-    test_upgrade_from.84343332e9cf5d359df6340df70d95a815c74df2.name = "Testing (#28)"
+    # ------------
+    # Tests to run
+    # ------------
+
+    # -------------------------------
+    # Default args to use for install
+    # -------------------------------
+
+    # -------------------------------
+    # Commits to test upgrade from
+    # -------------------------------
+
+    test_upgrade_from.84343332e9cf5d359df6340df70d95a815c74df2.name = "Upgrade from 2.25.5~ynh1"
