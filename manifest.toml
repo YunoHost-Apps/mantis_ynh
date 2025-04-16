@@ -7,7 +7,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.25.7~ynh4"
+version = "2.27.1~ynh1"
 
 maintainers = []
 
@@ -61,8 +61,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.25.5.tar.gz"
-    sha256 = "cd1e2f3f6a58476c4e86e3c187c939473e78dd71df3c535d50ab031f77e01fcf"
+    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.27.1.tar.gz"
+    sha256 = "7edd77398e85a49935a67595c8fe5668e5c3f47244928b9f2229a53ec48ab86c"
 
     autoupdate.strategy = "latest_github_tag"
     autoupdate.version_regex = "^release-(.*)$"
