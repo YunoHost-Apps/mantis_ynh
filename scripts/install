@@ -50,19 +50,19 @@ ynh_composer_install
 ynh_composer_exec install --no-dev
 
 # Installation with cURL
-ynh_local_curl "/admin/install.php?submit" \
-    "install=2" "hostname=localhost" "timezone=UTC" \
-    "admin_username=" "admin_password=" \
-    "db_type=mysqli" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" \
-    "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table"
+#ynh_local_curl "/admin/install.php?submit" \
+#    "install=2" "hostname=localhost" "timezone=UTC" \
+#    "admin_username=" "admin_password=" \
+#    "db_type=mysqli" "db_username=$db_user" "db_password=$db_pwd" "database_name=$db_name" \
+#    "db_table_prefix=$db_name" "db_table_plugin_prefix=plugin" "db_table_suffix=_table"
 
 # Remove the `admin/` directory from within the MantisBT installation path.
 # The scripts within this directory should not be accessible on a live MantisBT site
 # or on any installation that is accessible via the Internet.
-ynh_safe_rm "$install_dir/admin"
+#ynh_safe_rm "$install_dir/admin"
 
 # Set the user chosen at installation as administrator
-ynh_mysql_db_shell <<< "UPDATE ${db_name}_user_table SET username = '$admin' WHERE id = 1;"
+#ynh_mysql_db_shell <<< "UPDATE ${db_name}_user_table SET username = '$admin' WHERE id = 1;"
 
 #=================================================
 # END OF SCRIPT
