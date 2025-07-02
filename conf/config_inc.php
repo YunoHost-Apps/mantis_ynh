@@ -344,7 +344,7 @@ $g_form_security_validation = ON;
  *
  * @global string $g_crypto_master_salt
  */
-$g_crypto_master_salt = '__RAMDOM__';
+$g_crypto_master_salt = '__RANDOM__';
 
 ############################
 # Signup and Lost Password #
