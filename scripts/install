@@ -27,6 +27,7 @@ ynh_setup_source --dest_dir="$install_dir"
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
+dir=__DIR__
 ynh_config_add --template="config_inc.php" --destination="$install_dir/config/config_inc.php"
 
 #=================================================
