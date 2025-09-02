@@ -20,7 +20,7 @@ code = "https://github.com/mantisbt/mantisbt/"
 cpe = "cpe:2.3:a:jenkins:mantis"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -96,3 +96,6 @@ ram.runtime = "50M"
 
     [resources.database]
     type = "mysql"
+
+    [resources.composer]
+    version = "2.1.1"
