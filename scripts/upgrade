@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -29,7 +28,6 @@ ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config/config_
 #=================================================
 ynh_script_progression "Finalizing installation with Curl..."
 
-#REMOVEME? ynh_composer_install
 ynh_composer_exec install --no-dev
 
 # Installation with cURL
