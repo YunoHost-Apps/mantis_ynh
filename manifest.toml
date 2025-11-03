@@ -7,7 +7,7 @@ name = "Mantis"
 description.en = "Bug tracking system"
 description.fr = "Système de suivi des bugs"
 
-version = "2.27.1~ynh1"
+version = "2.27.2~ynh1"
 
 maintainers = []
 
@@ -20,13 +20,12 @@ code = "https://github.com/mantisbt/mantisbt/"
 cpe = "cpe:2.3:a:jenkins:mantis"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = true
-
 sso = false
 
 disk = "50M"
@@ -61,8 +60,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.27.1.tar.gz"
-    sha256 = "7edd77398e85a49935a67595c8fe5668e5c3f47244928b9f2229a53ec48ab86c"
+    url = "https://github.com/mantisbt/mantisbt/archive/refs/tags/release-2.27.2.tar.gz"
+    sha256 = "fd7ba9f5a7c1cacfbe011e271aa2b034356fe5f682bf12ff1e7ba0b243152292"
 
     autoupdate.strategy = "latest_github_tag"
     autoupdate.version_regex = "^release-(.*)$"
@@ -96,3 +95,6 @@ ram.runtime = "50M"
 
     [resources.database]
     type = "mysql"
+
+    [resources.composer]
+    version = "2.8.11"
