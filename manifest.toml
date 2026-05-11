@@ -20,7 +20,7 @@ code = "https://github.com/mantisbt/mantisbt/"
 cpe = "cpe:2.3:a:jenkins:mantis"
 
 [integration]
-yunohost = ">= 12.1.38"
+yunohost = ">= 12.1.39"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -76,20 +76,20 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php8.2-mbstring",
-        "php8.2-fpm",
-        "php8.2-common",
-        "php8.2-gmp",
-        "php8.2-curl",
-        "php8.2-intl",
-        "php8.2-xmlrpc",
-        "php8.2-mysql",
-        "php8.2-gd",
-        "php8.2-xml",
-        "php8.2-cli",
-        "php8.2-zip",
-        "php8.2-ldap",
-        "php8.2-bcmath",
+        "php8.5-mbstring",
+        "php8.5-fpm",
+        "php8.5-common",
+        "php8.5-gmp",
+        "php8.5-curl",
+        "php8.5-intl",
+        "php8.5-xmlrpc",
+        "php8.5-mysql",
+        "php8.5-gd",
+        "php8.5-xml",
+        "php8.5-cli",
+        "php8.5-zip",
+        "php8.5-ldap",
+        "php8.5-bcmath",
         "mariadb-server",
     ]
 
@@ -97,4 +97,4 @@ ram.runtime = "50M"
     type = "mysql"
 
     [resources.composer]
-    version = "2.8.11"
+    version = "2.9.7"
