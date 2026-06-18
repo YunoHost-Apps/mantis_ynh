@@ -1,0 +1,1 @@
+MantisBT est un outil de suivi des tickets open source qui offre un équilibre subtil entre simplicité et puissance. Les utilisateurs peuvent se lancer en quelques minutes et commencer à gérer leurs projets tout en collaborant efficacement avec leurs collègues et leurs clients. 
